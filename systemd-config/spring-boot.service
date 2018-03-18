@@ -1,0 +1,11 @@
+[Unit]
+Description=Spring Boot Service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/java -jar /home/java/spring-boot-service.jar --spring.profiles.active=test
+ExecStop=/bin/kill -TERM $MAINPID
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
